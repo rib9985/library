@@ -110,6 +110,7 @@ function createBookElement(book) {
 
   const removeBook = document.createElement('button');
   removeBook.textContent = 'Remove Book';
+  removeBook.classList.add('book-remove');
   removeBook.id.replace('remove');
   removeBook.onclick = function () {
     removeBookFromLibrary(`${book.id}`);
