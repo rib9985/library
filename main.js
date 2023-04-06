@@ -94,12 +94,14 @@ function createBookElement(book) {
     const status = checkBookReadStatus(book.read);
     if (status !== true) {
       readButton.textContent = 'Book Read';
-      readButton.classList.add('book-read-true');
+      readButton.classList.remove('book-read-false');
+      readButton.classList.toggle('book-read-true');
       book.read = true;
       return book.read;
     }
     readButton.textContent = 'Book Not Read';
-    readButton.classList.add('book-read-false');
+    readButton.classList.remove('book-read-true');
+    readButton.classList.toggle('book-read-false');
     book.read = false;
     return book.read;
   };
