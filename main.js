@@ -60,10 +60,37 @@ function createBookElement(book){
   pagesElement.classList.add('book-card-pages')
   bookElement.appendChild(pagesElement)
 
-  const readElement = document.createElement('p');
-  readElement.textContent = `Read: ${book.read}`
-  readElement.classList.add('book-card-read')
-  bookElement.appendChild(readElement)
+
+  const readButton = document.createElement('button')
+  const status = checkBookReadStatus(book.read)
+  if (status === true){
+    readButton.textContent = "Book Read"
+    readButton.classList.add('book-read-true')
+  }
+  else{
+    readButton.textContent = "Book Not Read"
+    readButton.classList.add('book-read-false')
+  }
+
+  readButton.onclick=function(){
+    const status = checkBookReadStatus(book.read)
+    if (status !== true){
+      readButton.textContent = "Book Read"
+      readButton.classList.add('book-read-true')
+      return book.read=true
+    }
+    else{
+      readButton.textContent = "Book Not Read"
+      readButton.classList.add('book-read-false')
+      return book.read=false
+    }
+    
+  }
+
+  bookElement.append(readButton)
+
+
+ 
 
   const removeBook = document.createElement('button');
   removeBook.textContent = 'Remove Book'
@@ -113,6 +140,11 @@ function updatePositions() {
   });
 }
 
+
+function checkBookReadStatus(book){
+  if (book === true) {return true}
+  else {return false}
+}
 
 
 
