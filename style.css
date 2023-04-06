@@ -1,0 +1,108 @@
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Signika+Negative:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200");
+
+.material-symbols-rounded {
+  font-variation-settings: "FILL" 1, "wght" 700, "GRAD" 0, "opsz" 48;
+}
+
+:root {
+  --background-color: #282a36;
+  --main-color: #44475a;
+  --main-color-darker: #2f3036;
+  --foreground-color: #f8f8f2;
+  --cyan: #8be9fd;
+  --green: #50fa7b;
+  --orange: #ffb86c;
+  --pink: #ff79c6;
+  --purple: #bd93f9;
+  --red: #ff5555;
+  -yellow: #f1fa8c;
+
+  --title-font: "Bree Serif";
+  --content-font: Dongle;
+  --menu-font: Signika Negative;
+}
+
+body{
+    background-color: var(--background-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1{
+    font-family: var(--title-font);
+    font-weight: 400;
+    font-size: 3rem;
+    margin: 0;
+    color: var(--pink)
+}
+
+p{
+    margin: 0;
+    font-family: var(--content-font);
+    font-size: 2rem;
+    line-break: ;
+    color: var(--purple)
+}
+
+.welcome-container{
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.welcome-container > h1{
+    padding: 3rem;
+
+}
+
+#book{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input, select{
+    border-style: none;
+    border-radius: 10px;
+    height: 2rem;
+    border-color: none;
+    font-size: 1.5rem;
+    font-family: var(--menu-font);
+    padding: 5px;
+    background-color: var(--main-color);
+    color:  var(--orange);
+}
+
+.submit-button{
+    height: 3rem;
+    font-family: var(--content-font);
+    font-weight: 800;
+    font-size: 2rem;
+    color:  var(--cyan);
+}
+
+label{
+    font-family: var(--menu-font);
+    color:  var(--foreground-color);
+}
+
+
+select>option{
+    color: var(--green)
+}
+
+.submit-button:hover{
+    color: var(--foreground-color)
+}
+
+.submit-button:active{
+    color: var(--foreground-color)
+}
+
