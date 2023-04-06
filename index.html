@@ -1,36 +1,33 @@
- <!DOCTYPE html>
- <html lang="en">
- <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./node_modules/normalize.css/normalize.css">
-    <link rel="stylesheet" href="style.css">
-    <script src="main.js" defer></script>
-    <title>Library</title>
- </head>
- <body>
-   <div class="welcome-container">
-      <h1>Welcome to Your Library</h1>
-      <p>Add your books below to populate your Library</p>
-      <p>Make sure to fill out all the forms to create an entry</p>
-   </div>
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./node_modules/normalize.css/normalize.css" />
+		<link rel="stylesheet" href="style.css" />
+		<script src="main.js" defer></script>
+		<title>Library</title>
+	</head>
+	<body>
+		<div class="welcome-container">
+			<h1>Welcome to Your Library</h1>
+			<p>Add your books below to populate your Library</p>
+			<p>Make sure to fill out all the forms to create an entry</p>
+		</div>
 
-   <form id="book" method="post">
-      <input type="text" id="title" placeholder='Title'required>
-      <input type="text" id="author" placeholder='Author'required>
-      <input type="number" id="pages" placeholder='Pages'required>
-      <label for="book-was-read">Was the book read?</label>
-         <select name="book-was-read" id="read">
-            <option value="true">Yes</option>
-            <option value="false">No</option>
-         </select>
-      <input class="submit-button"type="submit"  value="Add Book">      
-    </form>
+		<form id="book" method="post">
+			<input type="text" id="title" placeholder="Title" required />
+			<input type="text" id="author" placeholder="Author" required />
+			<input type="number" id="pages" placeholder="Pages" required />
+			<label for="book-was-read">Was the book read?</label>
+			<select name="book-was-read" id="read">
+				<option value="true">Yes</option>
+				<option value="false">No</option>
+			</select>
+			<input class="submit-button" type="submit" value="Add Book" />
+		</form>
 
-    <div class="library-container" id="library">
-
-    </div>
-   
- </body>
- </html>
+		<div class="library-container" id="library"></div>
+	</body>
+</html>
