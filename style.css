@@ -70,6 +70,7 @@ p{
 
 input, select{
     border-style: none;
+    outline:none;
     border-radius: 10px;
     height: 2rem;
     border-color: none;
@@ -103,6 +104,54 @@ select>option{
 }
 
 .submit-button:active{
-    color: var(--foreground-color)
+    color: var(--green);
+    transform: scale(99%);
 }
 
+.submit-button:focus{
+    border-bottom-width: 0.3rem;
+    outline: none;
+    border-color: var(--green);
+}
+
+input:focus, option:active{
+    transform: scale(101%);
+    border-style: solid;
+    border-bottom-width: 0.4rem;
+    outline: none;
+    border-color: var(--orange);
+}
+
+.library-container{
+    padding-top: 50px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.book-card{
+    border:0;
+    padding: 20px;
+    width: 10rem;
+    height: 20rem;
+    border-radius: 5px;
+    background-color: #44475a;
+    border-left: 4px;
+    border-left-color: var(--orange);
+    border-radius: 10px;
+    border-style: solid;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.book-card-title{
+    margin: 0;
+    font-family: var(--title-font);
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: var(--orange)
+}

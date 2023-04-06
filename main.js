@@ -62,7 +62,7 @@ function createBookElement(book) {
   const libraryContainer = document.getElementById('library');
 
   const bookElement = document.createElement('div');
-  bookElement.classList.add(`book-card-${book.id}`);
+  bookElement.classList.add('book-card');
   bookElement.setAttribute('id', `${book.id}`);
 
   const titleElement = document.createElement('h3');
