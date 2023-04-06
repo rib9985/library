@@ -37,7 +37,7 @@ function clearFormFields(){
 
 }
 
-function displayBook(book){
+function createBookElement(book){
   const libraryContainer = document.getElementById('library');
 
   const bookElement = document.createElement('div');
@@ -65,46 +65,52 @@ function displayBook(book){
   readElement.classList.add('book-card-read')
   bookElement.appendChild(readElement)
 
-  const bookIdElement = document.createElement('p');
-  bookIdElement.textContent = `${book.id}`
-  bookIdElement.classList.add(`${book.id}`)
-  bookElement.appendChild(bookIdElement)
-
   const removeBook = document.createElement('button');
   removeBook.textContent = 'Remove Book'
   removeBook.id.replace('remove')
   removeBook.onclick=function(){removeBookFromLibrary(`${book.id}`)}
   bookElement.appendChild(removeBook)
 
+ 
+
   libraryContainer.appendChild(bookElement)
 
 
 }
 
+function libraryDisplay(){
+  const libraryContainer = document.getElementById('library');
+  libraryContainer.innerHTML=""
+  
+myLibrary.forEach(function(book){
+  createBookElement(book)
+})
 
+}
 
 
 
 function removeBookFromLibrary(book){
-  updateLibraryDisplay(book)
+  removeBookFromDisplay(book)
   myLibrary.splice(book,1)
-  
+  updatePositions()
+  libraryDisplay()
 
+  
 
 }
 
-function updateLibraryDisplay(book){
-  console.log(book)
-
+function removeBookFromDisplay(book){
   const bookDiv = document.getElementById(`${book}`)
   bookDiv.remove()
  
-
 }
 
 
-function changeReadStatus(){
-
+function updatePositions() {
+  myLibrary.forEach(function(book, index) {
+    book.id = index;
+  });
 }
 
 
@@ -113,8 +119,9 @@ function changeReadStatus(){
 form.addEventListener('submit', function(event) {
   event.preventDefault();
   addBookToLibrary()
+  updatePositions()
   clearFormFields()
-  displayBook(myLibrary[`${getCurrentIndexNumber()-1}`])
+  libraryDisplay()
 
 });
 
