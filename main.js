@@ -6,7 +6,7 @@ function Book(title,author,pages,read,id){
   this.author= author
   this.pages= pages
   this.read= read
-  this.bookId = id
+  this.id = id
 }
 
 const form = document.getElementById('book');
@@ -41,7 +41,9 @@ function displayBook(book){
   const libraryContainer = document.getElementById('library');
 
   const bookElement = document.createElement('div');
-  bookElement.classList.add('book-card')
+  bookElement.classList.add(`book-card-${book.id}`)
+  bookElement.setAttribute('id',`${book.id}`)
+
 
   const titleElement = document.createElement('h3');
   titleElement.textContent = book.title
@@ -61,7 +63,18 @@ function displayBook(book){
   const readElement = document.createElement('p');
   readElement.textContent = `Read: ${book.read}`
   readElement.classList.add('book-card-read')
-  bookElement.appendChild(pagesElement)
+  bookElement.appendChild(readElement)
+
+  const bookIdElement = document.createElement('p');
+  bookIdElement.textContent = `${book.id}`
+  bookIdElement.classList.add(`${book.id}`)
+  bookElement.appendChild(bookIdElement)
+
+  const removeBook = document.createElement('button');
+  removeBook.textContent = 'Remove Book'
+  removeBook.id.replace('remove')
+  removeBook.onclick=function(){removeBookFromLibrary(`${book.id}`)}
+  bookElement.appendChild(removeBook)
 
   libraryContainer.appendChild(bookElement)
 
@@ -72,10 +85,23 @@ function displayBook(book){
 
 
 
-function removeBookFromLibrary(){
+function removeBookFromLibrary(book){
+  updateLibraryDisplay(book)
+  myLibrary.splice(book,1)
+  
 
 
 }
+
+function updateLibraryDisplay(book){
+  console.log(book)
+
+  const bookDiv = document.getElementById(`${book}`)
+  bookDiv.remove()
+ 
+
+}
+
 
 function changeReadStatus(){
 
@@ -89,5 +115,6 @@ form.addEventListener('submit', function(event) {
   addBookToLibrary()
   clearFormFields()
   displayBook(myLibrary[`${getCurrentIndexNumber()-1}`])
+
 });
 
