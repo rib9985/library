@@ -1,7 +1,7 @@
 {
-  "name": "dropdown-template",
-  "version": "1.0.0",
-  "description": "A template for general things",
+  "name": "Library",
+  "version": "1.1.0",
+  "description": "A library logging test",
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
