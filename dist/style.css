@@ -216,3 +216,7 @@ option:active {
 .book-remove:active {
 	transform: scale(98%);
 }
+
+input:invalid{
+  border: 2px dashed var(--pink)
+}
